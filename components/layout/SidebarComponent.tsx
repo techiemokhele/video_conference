@@ -3,11 +3,11 @@
 import React from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 //custom
 import { sidebarLinks } from "@/constants";
-import Image from "next/image";
 
 const SidebarComponent = () => {
   const pathname = usePathname();
@@ -17,7 +17,7 @@ const SidebarComponent = () => {
       <div className="flex flex-col flex-1 gap-6">
         {sidebarLinks.map((link) => {
           const isActive =
-            pathname === link.route || pathname.startsWith(link.route);
+            pathname === link.route || pathname.startsWith(`${link.route}/`);
 
           return (
             <Link
