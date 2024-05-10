@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 
 //custom
 import MobileNavbarComponent from "@/components/layout/MobileNavbarComponent";
@@ -21,7 +22,11 @@ const NavbarComponent = () => {
       </Link>
 
       <div className="flex-between gap-5">
-        {/*clerk user management*/} <MobileNavbarComponent />
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+
+        <MobileNavbarComponent />
       </div>
     </div>
   );
