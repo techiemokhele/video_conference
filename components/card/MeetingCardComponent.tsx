@@ -1,11 +1,8 @@
 "use client";
 
 import Image from "next/image";
-
 import { cn } from "@/lib/utils";
-
 import { avatarImages } from "@/constants";
-
 import { Button } from "../ui/button";
 import { useToast } from "../ui/use-toast";
 
