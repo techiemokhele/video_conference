@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { Call, CallRecording } from "@stream-io/video-react-sdk";
 
 //custom
@@ -39,7 +40,7 @@ const CallListComponent = ({
       case "upcoming":
         return "No Upcoming Calls";
       case "recordings":
-        return "No Recordings";
+        return "No Recordings Found";
       default:
         return "";
     }
@@ -108,7 +109,17 @@ const CallListComponent = ({
           />
         ))
       ) : (
-        <h1 className="text-2xl font-bold text-white">{noCallsMessage}</h1>
+        <div className="flex flex-col items-center justify-center">
+          <Image
+            src="/images/noRecording.png"
+            alt="image"
+            width={200}
+            height={200}
+            className="mb-5"
+          />
+
+          <h1 className="text-2xl font-bold text-white">{noCallsMessage}</h1>
+        </div>
       )}
     </div>
   );
