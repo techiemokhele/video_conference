@@ -1,8 +1,18 @@
+import type { Metadata } from "next";
 import React, { ReactNode } from "react";
 
 //custom
 import NavbarComponent from "@/components/layout/NavbarComponent";
 import SidebarComponent from "@/components/layout/SidebarComponent";
+
+export const metadata: Metadata = {
+  title: "Neo Mokhele | Video Conference",
+  description:
+    "Experience seamless video calling with Neo Mokhele's innovative web app. Connect effortlessly with friends, family, and colleagues through high-quality video conferencing.",
+  icons: {
+    icon: "/icons/logo.svg",
+  },
+};
 
 const HomeLayout = ({ children }: { children: ReactNode }) => {
   return (
