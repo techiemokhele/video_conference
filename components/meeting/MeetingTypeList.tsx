@@ -4,9 +4,10 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useUser } from "@clerk/nextjs";
 import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk";
+import ReactDatePicker from "react-datepicker";
 import { useToast } from "@/components/ui/use-toast";
 import { Textarea } from "@/components/ui/textarea";
-import ReactDatePicker from "react-datepicker";
+import { Input } from "../ui/input";
 
 //custom
 import HomeCardComponent from "../card/HomeCardComponent";
@@ -118,6 +119,16 @@ const MeetingTypeList = () => {
         className="bg-yellow-1"
       />
 
+      {/* Instant Meeting Modal */}
+      <MeetingModal
+        isOpen={meetingState === "isInstantMeeting"}
+        onClose={() => setMeetingState(undefined)}
+        title="Would you like to start an instant meeting?"
+        className="text-center"
+        buttonText="Start Meeting"
+        handleClick={createMeeting}
+      />
+
       {/* Schedule Meeting Modal */}
       {!callDetails ? (
         <MeetingModal
@@ -176,15 +187,21 @@ const MeetingTypeList = () => {
         />
       )}
 
-      {/* Instant Meeting Modal */}
+      {/* Join Meeting Modal */}
       <MeetingModal
-        isOpen={meetingState === "isInstantMeeting"}
+        isOpen={meetingState === "isJoiningMeeting"}
         onClose={() => setMeetingState(undefined)}
-        title="Would you like to start an instant meeting?"
+        title="Type the meeting link here"
         className="text-center"
-        buttonText="Start Meeting"
-        handleClick={createMeeting}
-      />
+        buttonText="Join Meeting"
+        handleClick={() => router.push(values.link)}
+      >
+        <Input
+          placeholder="Meeting link"
+          onChange={(e) => setValues({ ...values, link: e.target.value })}
+          className="border-none bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0"
+        />
+      </MeetingModal>
     </section>
   );
 };
