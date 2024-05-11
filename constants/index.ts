@@ -24,4 +24,12 @@ export const sidebarLinks = [
         route: "/personal-room",
         imgUrl: "./icons/add-personal.svg"
     }
-]
+];
+
+export const avatarImages = [
+  '/images/avatar-1.jpg',
+  '/images/avatar-2.jpg',
+  '/images/avatar-3.jpg',
+  '/images/avatar-4.jpg',
+  '/images/avatar-5.jpg',
+];
