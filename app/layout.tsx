@@ -5,12 +5,17 @@ import { Toaster } from "@/components/ui/toaster";
 
 //custom
 import "./globals.css";
+import "@stream-io/video-react-sdk/dist/css/styles.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Neo Mokhele | Video Conference",
-  description: "",
+  description:
+    "Experience seamless video calling with Neo Mokhele's innovative web app. Connect effortlessly with friends, family, and colleagues through high-quality video conferencing.",
+  icons: {
+    icon: "/icons/logo.svg",
+  },
 };
 
 export default function RootLayout({
