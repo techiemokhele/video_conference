@@ -8,5 +8,8 @@
   "vs-code-prettier-eslint.prettierLast": false,
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "cSpell.words": [
+    "nextjs"
+  ]
 }

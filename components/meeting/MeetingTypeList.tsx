@@ -7,7 +7,7 @@ import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk";
 import { useToast } from "@/components/ui/use-toast";
 
 //custom
-import HomeCardComponent from "./HomeCardComponent";
+import HomeCardComponent from "../card/HomeCardComponent";
 import MeetingModal from "../modal/MeetingModal";
 
 const MeetingTypeList = () => {
